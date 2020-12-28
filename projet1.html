@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8">
     <title>projet 1</title>
@@ -7,6 +7,9 @@
     <link type="text/css" rel="stylesheet" href="css/main.css">
   </head>
    <body>
+   <br>
+     <a href="http://localhost:63342/htmlproject/index.html?_ijt=uptq5sni9pqbb0vdeq9tmajtds">accueil</a>
+     <br>
      <center><b><big>Projet 1</big></b></center>
      <br>
      <center><b>Le<B> Projet 1</B> consite à allumer une led avec un arduino.</b></center>
@@ -16,9 +19,26 @@
      <center><img src="led1.png"> </center>
      <br>
      <p>Le montage est très simple sauf qu'il faut faire attention à la patte de la led la plus petite patte doit être relier au moins.</p>
+     <p>Pour le code il vous sufit de copier de le code et le coller dans l'IDE.Le code est ci dessous:</p>
      <div class="cadre">
-       kfer<br>
-       ferfpoerfpoke<br>
+         /*
+         led 1<br>
+
+          */<br>
+
+          void setup() {<br>
+         // initialize digital pin LED_BUILTIN as an output.<br>
+       pinMode(11, OUTPUT);<br>
+        }<br>
+
+       // the loop function runs over and over again forever<br>
+       void loop() {<br>
+       digitalWrite(11, HIGH);   <br>
+       (500);    <br>
+        digitalWrite(11,  LOW);  <br>
+         delay(500); <br>
+        }<br>
+
      </div>
 
    </body>
