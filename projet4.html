@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet 4</title>
+    <link rel="icon" href="favicon-index.ico">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <a href="http://localhost:63342/htmlproject/index.html?_ijt=6fkh3dcumu9l4gi70h57gqcm5f"><img src="image/maison.png"></a>
+    <center><b><big>Projet 4</big></b></center>
+    <br>
+    <center><b>le<B> Projet4</B> consiste à s'amuser avec un clavier. </b></center>
+    <br>
+    <p>Pour ce projet il vous faudra:</p>
+    <br>
+    <br>
+    <a target="_blank" href="https://www.amazon.fr/dp/B08B3JR8W9/ref=twister_B07ZGFW7WT?_encoding=UTF8&psc=1">-un clavier 4X4</a>
+    <br>
+    <img src="image/clavier_bb.png">
+    <p>Pour le code il vous sufit de copier de le code et le coller dans l'IDE.Le code est ci dessous:</p>
+    <div class="cadre">
+    <code>
+        /* Arduino Security System with the Keypad and LCD<br>
+        * Creator Mert KILIC - Mert Arduino Tutorial and Project<br>
+        * Please subscribe for support<br>
+        * Thanks<br>
+        */<br>
+        <br>
+        #include <LiquidCrystal.h> //include LCD library (standard library)<br>
+        #include <Keypad.h> //include keypad library - first you must install library (library link in the video description)<br>
+        <br>
+        #define redLED 10 //define the LED pins<br>
+        #define greenLED 11<br>
+        <br>
+        char* password ="3132"; //create a password<br>
+        int pozisyon = 0; //keypad position<br>
+        <br>
+        const byte rows = 4; //number of the keypad's rows and columns<br>
+        const byte cols = 4;<br>
+        <br>
+        char keyMap [rows] [cols] = { //define the cymbols on the buttons of the keypad<br>
+        <br>
+        {'1', '2', '3', 'A'},<br>
+        {'4', '5', '6', 'B'},<br>
+        {'7', '8', '9', 'C'},<br>
+        {'*', '0', '#', 'D'}<br>
+        };<br>
+        <br>
+        byte rowPins [rows] = {1, 2, 3, 4}; //pins of the keypad<br>
+        byte colPins [cols] = {5, 6, 7, 8};<br>
+        <br>
+        Keypad myKeypad = Keypad( makeKeymap(keyMap), rowPins, colPins, rows, cols);<br>
+        <br>
+        LiquidCrystal lcd (A0, A1, A2, A3, A4, A5); // pins of the LCD. (RS, E, D4, D5, D6, D7)<br>
+        <br>
+        void setup(){<br>
+        <br>
+        lcd.begin(16, 2);<br>
+        pinMode(redLED, OUTPUT);  //set the LED as an output<br>
+        pinMode(greenLED, OUTPUT);<br>
+        setLocked (true); //state of the password<br>
+        }<br>
+        <br>
+        void loop(){<br>
+        <br>
+        char whichKey = myKeypad.getKey(); //define which key is pressed with getKey<br>
+        <br>
+        lcd.setCursor(0, 0);<br>
+        lcd.print("    Welcome");<br>
+        lcd.setCursor(0, 1);<br>
+        lcd.print(" Enter Password");<br>
+        <br>
+        if(whichKey == '*' || whichKey == '#' || whichKey == 'A' ||       //define invalid keys<br>
+        whichKey == 'B' || whichKey == 'C' || whichKey == 'D'){<br>
+        <br>
+        pozisyon=0;<br>
+        setLocked (true);<br>
+        lcd.clear();<br>
+        lcd.setCursor(0, 0);<br>
+        lcd.print("  Invalid Key!");<br>
+        delay(1000);<br>
+        lcd.clear();<br>
+        }<br>
+        if(whichKey == password [pozisyon]){<br>
+        <br>
+        pozisyon ++;<br>
+        }<br>
+        if(pozisyon == 4){<br>
+        setLocked (false);<br>
+        lcd.clear();<br>
+        lcd.setCursor(0, 0);<br>
+        lcd.print("*** Verified ***");<br>
+        delay(3000);<br>
+        lcd.clear();<br>
+        lcd.setCursor(0, 0);<br>
+        lcd.print("  Mert Arduino");<br>
+        lcd.setCursor(0, 1);<br>
+        lcd.print("Tutorial Project");<br>
+        delay(7000);<br>
+        lcd.clear();<br>
+        }<br>
+        delay(100);<br>
+        }<br>
+        <br>
+        void setLocked(int locked){<br>
+        if(locked){<br>
+        digitalWrite(redLED, HIGH);<br>
+        digitalWrite(greenLED, LOW);<br>
+        }<br>
+        else{<br>
+        digitalWrite(redLED, LOW);<br>
+        digitalWrite(greenLED, HIGH);<br>
+        }<br>
+        }<br>
+    </code>
+    </div>
+</body>
+</html>
