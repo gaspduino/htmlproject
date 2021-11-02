@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//arduino.byethost31.com/matomo/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
     <meta charset="UTF-8">
     <title>accueil</title>
     <link rel="icon" href="favicon-index.ico">
 
-     <meta name="Arduino gaspdui" content="Tutos en français sur Arduino">
+    <meta name="Arduino " content="Tutos en français sur Arduino">
 
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css
-" rel="stylesheet" integrity="sha384-
-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-            crossorigin="anonymous">
-
-
-    <!-- Matomo -->
-    <script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://xp3.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/xp3.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-
-    </script>
-    <!-- End Matomo Code -->
-
-
-
-
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -87,21 +79,15 @@
 
         </ul>
     </div>
-    <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js
-" integrity="sha384-
-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-            crossorigin="anonymous">
-    </script>
-
+    <script src="/js/bootstrap.bundle.min.js"></script>
 
     <p><b>salut<br>bienvenue sur mon site tu pourras t'informer au sujet d'arduino.</b></p>
     <p>
     <center><big> c'est quoi un arduino</big></center>
     </p>
-    <p>un arduino c'est une carte électronique programmable à la quelle on peut brancher divers composants et les
+    <p>Un arduino c'est une carte électronique programmable à la quelle on peut brancher divers composants et les
         programmer.
-    <center><img src="image/arduino.png" class="img-fluid"/></center>
+    <center><img src="image/arduino.png"></center>
 </div>
 </body>
 

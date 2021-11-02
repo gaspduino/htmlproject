@@ -1,107 +1,163 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//arduino.byethost31.com/matomo/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Projet 3</title>
     <link rel="icon" href="favicon-index.ico">
     <link type="text/css" rel="stylesheet" href="css/main.css">
-        <!-- Matomo -->
-    <script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://xp3.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/xp3.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
 
-    </script>
-    <!-- End Matomo Code -->
+
 </head>
 <body>
-<a href="/index.html"><img src="image/maison.png"></a>
-<center><b><big>Projet 3</big></b></center>
-<br>
-<center><b>Le<B> Projet 3</B> consite à allumer une plaque de led de référence:1088AS.</b></center>
-<p>Pour ce projet
-    il vous faudra:</p>
-<br>
-<br>
-<a target="_blank"
-   href="https://www.amazon.fr/Electronics-module-1088AS-brillant-matrice/dp/B07Z1YLB79/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=1088AS&qid=1618165316&sr=8-6">-une
-    plaque 1088AS </a>
-<br>
-<center><img src="image/max7219.png"></center>
-<p>Pour le code il vous suffit de copier de le code et le coller dans l'IDE.Le code est ci dessous:</p>
-<div class="cadre">
-    <code>
-        #define Max7219_pinCLK 10 <br>
-        #define Max7219_pinCS 11<br>
-        #define Max7219_pinDIN 12<br>
+<div class="container">
 
-        void setup() {<br>
-        pinMode(Max7219_pinCLK,OUTPUT);<br>
-        pinMode(Max7219_pinCS,OUTPUT);<br>
-        pinMode(Max7219_pinDIN,OUTPUT);<br>
-        delay(50); //Initialiser<br>
-        Init_MAX7219();<br>
-        }<br>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            led
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+                <a href="projet1.html" class="dropdown-item">projet1
+                </a>
+            </li>
 
-        void loop() {<br>
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+            lcd
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="projet2.html" class="dropdown-item">projet2
+                    <a href="projet4.html" class="dropdown-item">projet4
+                    </a>
+            </li>
 
-        Write_Max7219(1,0x10);<br>
-        Write_Max7219(2,0x30);<br>
-        Write_Max7219(3,0x50);<br>
-        Write_Max7219(4,0x10);<br>
-        Write_Max7219(5,0x10);<br>
-        Write_Max7219(6,0x10);<br>
-        Write_Max7219(7,B10101010);<br>
-        Write_Max7219(8,B01010101);<br>
-        delay(500);<br>
-        Write_Max7219(8,B10101010);<br>
-        Write_Max7219(7,B01010101);<br>
-        delay(500);<br>
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
+            plaque 1088AS
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="projet3.html" class="dropdown-item">projet3
+                </a>
+            </li>
 
-        }<br>
+        </ul>
 
-        void Init_MAX7219(void)<br>
-        {<br>
-        Write_Max7219(0x09, 0x00); //decoding ：BCD<br>
-        Write_Max7219(0x0a, 0x03); //brightness<br>
-        Write_Max7219(0x0b, 0x07); //scanlimit；8 LEDs<br>
-        Write_Max7219(0x0c, 0x01); //power-down mode：0，normal mode：1<br>
-        Write_Max7219(0x0f, 0x00); //test display：1；EOT，display：0<br>
-        }<br>
+        <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
+            un clavier 4X4
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="projet4.html" class="dropdown-item">projet4
+                </a>
+            </li>
 
-        //Ecriture sur une rangee<br>
-        void Write_Max7219(unsigned char address,unsigned char dat)<br>
-        {<br>
-        digitalWrite(Max7219_pinCS,LOW);<br>
-        Write_Max7219_byte(address); //address，code of LED<br>
-        Write_Max7219_byte(dat); //data，figure on LED<br>
-        digitalWrite(Max7219_pinCS,HIGH);<br>
-        }<br>
+        </ul>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
 
-        // Ecriture sur un 8x8<br>
-        void Write_Max7219_byte(unsigned char DATA)<br>
-        {<br>
-        unsigned char i;<br>
-        digitalWrite(Max7219_pinCS,LOW);<br>
-        for(i=8;i>=1;i--)<br>
-        {<br>
-        digitalWrite(Max7219_pinCLK,LOW);<br>
-        digitalWrite(Max7219_pinDIN,DATA&0x80);// Extracting a bit data<br>
-        DATA = DATA<<1;<br>
-        digitalWrite(Max7219_pinCLK,HIGH);<br>
-        }<br>
-        }<br>
-    </code>
+    <a href="/index.html"><img src="image/maison.png"></a>
+    <center><b><big>Projet 3</big></b></center>
+    <br>
+    <center><b>Le<B> Projet 3</B> consite à allumer une plaque de led de référence:1088AS.</b></center>
+    <p>Pour ce projet
+        il vous faudra:</p>
+    <br>
+    <br>
+    <a target="_blank"
+       href="https://www.amazon.fr/Electronics-module-1088AS-brillant-matrice/dp/B07Z1YLB79/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=1088AS&qid=1618165316&sr=8-6">-une
+        plaque 1088AS </a>
+    <br>
+    <center><img src="image/max7219.png"></center>
+    <p>Pour le code il vous suffit de copier de le code et le coller dans l'IDE.Le code est ci dessous:</p>
+    <div class="cadre">
+        <code>
+            #define Max7219_pinCLK 10 <br>
+            #define Max7219_pinCS 11<br>
+            #define Max7219_pinDIN 12<br>
 
-</div>
+            void setup() {<br>
+            pinMode(Max7219_pinCLK,OUTPUT);<br>
+            pinMode(Max7219_pinCS,OUTPUT);<br>
+            pinMode(Max7219_pinDIN,OUTPUT);<br>
+            delay(50); //Initialiser<br>
+            Init_MAX7219();<br>
+            }<br>
+
+            void loop() {<br>
+
+            Write_Max7219(1,0x10);<br>
+            Write_Max7219(2,0x30);<br>
+            Write_Max7219(3,0x50);<br>
+            Write_Max7219(4,0x10);<br>
+            Write_Max7219(5,0x10);<br>
+            Write_Max7219(6,0x10);<br>
+            Write_Max7219(7,B10101010);<br>
+            Write_Max7219(8,B01010101);<br>
+            delay(500);<br>
+            Write_Max7219(8,B10101010);<br>
+            Write_Max7219(7,B01010101);<br>
+            delay(500);<br>
+
+            }<br>
+
+            void Init_MAX7219(void)<br>
+            {<br>
+            Write_Max7219(0x09, 0x00); //decoding ：BCD<br>
+            Write_Max7219(0x0a, 0x03); //brightness<br>
+            Write_Max7219(0x0b, 0x07); //scanlimit；8 LEDs<br>
+            Write_Max7219(0x0c, 0x01); //power-down mode：0，normal mode：1<br>
+            Write_Max7219(0x0f, 0x00); //test display：1；EOT，display：0<br>
+            }<br>
+
+            //Ecriture sur une rangee<br>
+            void Write_Max7219(unsigned char address,unsigned char dat)<br>
+            {<br>
+            digitalWrite(Max7219_pinCS,LOW);<br>
+            Write_Max7219_byte(address); //address，code of LED<br>
+            Write_Max7219_byte(dat); //data，figure on LED<br>
+            digitalWrite(Max7219_pinCS,HIGH);<br>
+            }<br>
+
+            // Ecriture sur un 8x8<br>
+            void Write_Max7219_byte(unsigned char DATA)<br>
+            {<br>
+            unsigned char i;<br>
+            digitalWrite(Max7219_pinCS,LOW);<br>
+            for(i=8;i>=1;i--)<br>
+            {<br>
+            digitalWrite(Max7219_pinCLK,LOW);<br>
+            digitalWrite(Max7219_pinDIN,DATA&0x80);// Extracting a bit data<br>
+            DATA = DATA<<1;<br>
+            digitalWrite(Max7219_pinCLK,HIGH);<br>
+            }<br>
+            }<br>
+        </code>
+
+    </div>
 
 </body>
 </html>
