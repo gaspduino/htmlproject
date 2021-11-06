@@ -25,10 +25,20 @@
     <link type="text/css" rel="stylesheet" href="css/main.css">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<div class="container">
+ <div class="container">
 
     <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+            accueil
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="index.html" class="dropdown-item">accueil
+                </a>
+            </li>
+
+        </ul>
         <button class="btn btn-secondary dropdown-toggle" type="button"
                 id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             led
@@ -77,8 +87,6 @@
         </ul>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
-
-    <a href="/index.html"> <img src="image/maison.png"></a>
     <center><b><big>Projet 1</big></b></center>
     <br>
     <center><b>Le<B> Projet 1</B> consiste à allumer une led avec un arduino.</b></center>

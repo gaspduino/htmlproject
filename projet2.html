@@ -30,6 +30,16 @@
 
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
+            accueil
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="index.html" class="dropdown-item">accueil</a>
+            </li>
+
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle" type="button"
                 id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             led
         </button>
@@ -77,8 +87,6 @@
         </ul>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
-
-    <a href="/index.html"><img src="image/maison.png"></a>
     <center><b><big>Projet 2</big></b></center>
     <br>
     <center><b>Le<B> Projet 2</B> consite à écrire des caractères sur un écran LCD avec un arduino.</b></center>
@@ -97,9 +105,8 @@
     <p>Pour le code il vous suffit de copier de le code et le coller dans l'IDE.Le code est ci dessous:</p>
     <div class="cadre">
         <code>
-            #include
-            <LiquidCrystal.h><br>
-                <br>
+                #include &lt; LiquidCrystal&bull;h &gt; <br>
+
                 LiquidCrystal lcd(7,6,5,4,3,2);<br>
                 <br>
                 void setup() {<br>

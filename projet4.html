@@ -30,6 +30,17 @@
 
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
+            accueil
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="index.html" class="dropdown-item">accueil
+                </a>
+            </li>
+
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle" type="button"
                 id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             led
         </button>
@@ -75,10 +86,10 @@
             </li>
 
         </ul>
+
+
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
-
-    <a href="/index.html"><img src="image/maison.png"></a>
     <center><b><big>Projet 4</big></b></center>
     <br>
     <center><b>le<B> Projet4</B> consiste à s'amuser avec un clavier et faire un Digicode. </b></center>
@@ -94,28 +105,20 @@
     <p>Pour le code il vous suffit de copier de le code et le coller dans l'IDE.Le code est ci dessous:</p>
     <div class="cadre">
         <code>
-            /* Arduino Security System with the Keypad and LCD<br>
-            * Creator Mert KILIC - Mert Arduino Tutorial and Project<br>
-            * Please subscribe for support<br>
-            * Thanks<br>
-            */<br>
-            <br>
-            #include
-            <LiquidCrystal.h> //include LCD library (standard library)<br>
-                #include
-                <Keypad.h> //include keypad library - first you must install library (library link in the video
-                    description)<br>
+
+            #include &lt;LiquidCrystal&bull;h&gt;<br>
+                #include &lt;Keypad&bull;h&gt;<br>
                     <br>
-                    #define redLED 10 //define the LED pins<br>
+                    #define redLED 10 <br>
                     #define greenLED 11<br>
                     <br>
-                    char* password ="3132"; //create a password<br>
-                    int pozisyon = 0; //keypad position<br>
+                    char* password ="3132"; <br>
+                    int pozisyon = 0; <br>
                     <br>
-                    const byte rows = 4; //number of the keypad's rows and columns<br>
+                    const byte rows = 4; <br>
                     const byte cols = 4;<br>
                     <br>
-                    char keyMap [rows] [cols] = { //define the cymbols on the buttons of the keypad<br>
+                    char keyMap [rows] [cols] = { <br>
                     <br>
                     {'1', '2', '3', 'A'},<br>
                     {'4', '5', '6', 'B'},<br>
@@ -123,31 +126,31 @@
                     {'*', '0', '#', 'D'}<br>
                     };<br>
                     <br>
-                    byte rowPins [rows] = {1, 2, 3, 4}; //pins of the keypad<br>
+                    byte rowPins [rows] = {1, 2, 3, 4}; <br>
                     byte colPins [cols] = {5, 6, 7, 8};<br>
                     <br>
                     Keypad myKeypad = Keypad( makeKeymap(keyMap), rowPins, colPins, rows, cols);<br>
                     <br>
-                    LiquidCrystal lcd (A0, A1, A2, A3, A4, A5); // pins of the LCD. (RS, E, D4, D5, D6, D7)<br>
+                    LiquidCrystal lcd (A0, A1, A2, A3, A4, A5); <br>
                     <br>
                     void setup(){<br>
                     <br>
                     lcd.begin(16, 2);<br>
-                    pinMode(redLED, OUTPUT); //set the LED as an output<br>
+                    pinMode(redLED, OUTPUT); <br>
                     pinMode(greenLED, OUTPUT);<br>
-                    setLocked (true); //state of the password<br>
+                    setLocked (true); <br>
                     }<br>
                     <br>
                     void loop(){<br>
                     <br>
-                    char whichKey = myKeypad.getKey(); //define which key is pressed with getKey<br>
+                    char whichKey = myKeypad.getKey(); <br>
                     <br>
                     lcd.setCursor(0, 0);<br>
                     lcd.print(" Welcome");<br>
                     lcd.setCursor(0, 1);<br>
                     lcd.print(" Enter Password");<br>
                     <br>
-                    if(whichKey == '*' || whichKey == '#' || whichKey == 'A' || //define invalid keys<br>
+                    if(whichKey == '*' || whichKey == '#' || whichKey == 'A' || <br>
                     whichKey == 'B' || whichKey == 'C' || whichKey == 'D'){<br>
                     <br>
                     pozisyon=0;<br>
